@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="DefaultUiCleanedResharpedDec16.View.BlankView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DefaultUiCleanedResharpedDec16.View" 
+             xmlns:ctrl="clr-namespace:DefaultUiCleanedResharpedDec16.Assets.Controls" 
+             xmlns:vm="clr-namespace:DefaultUiCleanedResharpedDec16.ViewModel"              
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=vm:BlankViewVm, IsDesignTimeCreatable=True}" 
+             d:DesignHeight="{StaticResource WindowWidth}" 
+             d:DesignWidth="{StaticResource WindowWidth}"
+             Style="{DynamicResource UiViews}">
+
+    <Border BorderBrush="{DynamicResource BorderViews}" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{Binding ViewDisplayName}" Style="{DynamicResource UiHeaderText}" />
+
+            <Border Grid.Row="1" Style="{DynamicResource UiDividerHorizontal}"/>
+
+            <Grid Grid.Row="0">
+
+
+            </Grid>
+
+        </Grid>
+    </Border>
+</UserControl>

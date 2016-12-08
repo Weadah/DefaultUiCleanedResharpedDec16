@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DropShadowEffect x:Key="UiHeaderDropShadow" ShadowDepth="1" BlurRadius="5" Direction="315" Color="AliceBlue"/>
+    
+    <Style x:Key="UiMainWindow" TargetType="{x:Type Window}">
+        <Setter Property="Background" Value="{DynamicResource BackgroundMainWindow}"/>
+        <Setter Property="WindowStyle" Value="ToolWindow"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Width" Value="{DynamicResource WindowWidth}"/>
+        <Setter Property="Height" Value="{DynamicResource WindoWHeight}"/>
+    </Style>
+
+    <Style x:Key="UiViews" TargetType="{x:Type UserControl}">
+        <Setter Property="Background" Value="{DynamicResource BackgroundViews}"/>
+        <Setter Property="Margin" Value="0"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+    </Style>
+
+    <Style x:Key="UiDialogs" TargetType="{x:Type UserControl}">
+        <Setter Property="Background" Value="{DynamicResource BackgroundDialogs}"/>
+        <Setter Property="Width" Value="500"/>
+        <Setter Property="Height" Value="300"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+    </Style>
+    
+</ResourceDictionary>

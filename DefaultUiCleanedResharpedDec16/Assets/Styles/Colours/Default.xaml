@@ -1,0 +1,239 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- HiJack System Colours -->
+    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+    <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="Transparent" />
+
+    <!-- Accent -->
+    <SolidColorBrush Color="#FF4A5959" x:Key="AccentBase"/>
+    <SolidColorBrush x:Key="SemiTransparentWhiteBrush" Color="#55FFFFFF"/>
+
+    <!-- Disabled Controls -->
+    <SolidColorBrush Color="#FF666666" x:Key="BorderControlDisabled" />
+    <SolidColorBrush Color="#FF999999" x:Key="BackgroundControlDisabled" />
+    <SolidColorBrush Color="#FF6A6A6A" x:Key="TextControlDisabled" />
+
+    <!-- Window / Views / UI -->
+    <SolidColorBrush Color="Gainsboro" x:Key="BackgroundMainWindow" />
+    <SolidColorBrush Color="#FFBBBBBB" x:Key="BackgroundViews" />
+    <SolidColorBrush Color="#FFE4E4E4" x:Key="BackgroundDialogs" />
+    
+    <SolidColorBrush Color="#FFF0F0F0" x:Key="BorderViews" />
+    <SolidColorBrush Color="#FFA4A4A4" x:Key="BorderDialogs" />
+    
+    <SolidColorBrush Color="#FF4D4D4D" x:Key="DividerShadow"/>
+    <SolidColorBrush Color="#FFE8E8E8" x:Key="DividerInset"/>
+
+    <!-- Window/UI BaseBorder -->
+    <SolidColorBrush Color="#FF616161" x:Key="BorderBaseBorderDark"/>
+    <SolidColorBrush Color="#FF838383" x:Key="BorderBaseBorderLight"/>
+    <SolidColorBrush Color="#FF5B5B5B" x:Key="BackgroundBaseBorder"/>
+
+    <!-- Text -->
+    <SolidColorBrush Color="#FF616161" x:Key="TextInterfaceDark" />
+    <SolidColorBrush Color="#FFD1D1D1" x:Key="TextInterfaceLight" />
+    <SolidColorBrush Color="#FF5B5B5B" x:Key="TextHeaderColour" />
+
+    <!-- TextBoxes -->
+    <SolidColorBrush Color="#FF7A7A7A" x:Key="BorderTextBoxMouseOut"/>
+    <SolidColorBrush Color="#FF939393" x:Key="BorderTextBoxMouseOver"/>
+    <SolidColorBrush Color="#FFB0B0B0" x:Key="BorderTextBoxFocus"/>
+
+    <SolidColorBrush Color="#FFD3D3D3" x:Key="BackgroundTextBox" />
+
+    <SolidColorBrush Color="#FF708090" x:Key="TextTextBoxSelectionBrush"/>
+    <SolidColorBrush Color="#FF808080" x:Key="TextTextBoxWaterMark" />
+    <SolidColorBrush Color="#FF808080" x:Key="TextTextBoxMouseOver" />
+    <SolidColorBrush Color="#FF292929" x:Key="TextTextBoxMouseOut" />
+
+    <!--  Check Boxes -->
+    <SolidColorBrush Color="#FF343434" x:Key="BorderCheckBoxIsFocused"/>
+    <SolidColorBrush Color="#FF646464" x:Key="BorderCheckBoxIsPressed" />
+    <SolidColorBrush Color="#FF686868" x:Key="BorderCheckBoxMouseOver" />
+    <SolidColorBrush Color="#FF6E6E6E" x:Key="BorderCheckBoxMouseOut" />
+
+    <SolidColorBrush Color="#FFCFCFCF" x:Key="BackgroundCheckboxMouseOut" />
+    <SolidColorBrush Color="#FFE8E8E8" x:Key="BackgroundCheckboxMouseOver" />
+    <SolidColorBrush Color="#FFA6A6A6" x:Key="BackgroundCheckboxIsPressed" />
+    <SolidColorBrush Color="#FFE6E6E6" x:Key="BackgroundCheckboxIsChecked" />
+    <SolidColorBrush Color="#FFA2A2A2" x:Key="BackgroundCheckboxIndeterminate" />
+
+    <!-- ListBoxes -->
+    <SolidColorBrush Color="#FFCBCBCB" x:Key="BackgroundListBox"/>
+    <SolidColorBrush Color="#FF9C9C9C" x:Key="BorderListBox"/>
+
+    <SolidColorBrush Color="#FFC5C5C5" x:Key="TextListBoxItemMouseOut" />
+    <SolidColorBrush Color="White" x:Key="TextListBoxItemIsSelected" />
+    
+    <SolidColorBrush Color="#FFEEEEEE" x:Key="BackgroundListBoxItemIsSelected" />
+
+    <!-- Progress Bars -->
+    <SolidColorBrush Color="#FFA6A6A6" x:Key="BackgroundProgressBarMouseOut"/>
+    <SolidColorBrush Color="#FF767676" x:Key="BorderProgressBarMouseOut"/>
+    
+    <SolidColorBrush Color="#FFC5C5C5" x:Key="BackgroundProgressBarProgressBrush"/>
+    <SolidColorBrush Color="#FFDEDEDE" x:Key="BorderProgressBarProgressBrush"/>
+
+    <Color x:Key="ProgressBarIndeterminateColor1">#33878787</Color>
+    <Color x:Key="ProgressBarIndeterminateColor2">#33959595</Color>
+    <Color x:Key="ProgressBarIndeterminateColor3">#4C000000</Color>
+    <Color x:Key="ProgressBarIndeterminateColor4">#4C000000</Color>
+
+    <!-- Progress Ring -->
+    <SolidColorBrush Color="#FF707070" x:Key="TextProgressRing" />
+    <SolidColorBrush Color="#FF8B8B8B" x:Key="BackgroundProgressRingPip" />
+    <SolidColorBrush Color="#FF818181" x:Key="BackgroundProgressRing" />
+    <SolidColorBrush Color="#FF6E6E6E" x:Key="BorderProgressRing" />
+
+    <SolidColorBrush Color="#FFA0A0A0" x:Key="BackgroundProgressRingStaticRing" />
+    <SolidColorBrush Color="Gray" x:Key="BackgroundProgressRingProgressRing" />
+
+    <!-- Progress Ring Pips - If Adding more Pips, Add more colours Here!! -->
+    <SolidColorBrush Color="#FF2D4D4D" x:Key="BackgroundProgressRingPip0" />
+    <SolidColorBrush Color="#FF3F6868" x:Key="BackgroundProgressRingPip1" />
+    <SolidColorBrush Color="#FF559191" x:Key="BackgroundProgressRingPip2" />
+    <SolidColorBrush Color="#FF60A4A4" x:Key="BackgroundProgressRingPip3" />
+    <SolidColorBrush Color="#FF559191" x:Key="BackgroundProgressRingPip4" />
+    <SolidColorBrush Color="#FF3F6868" x:Key="BackgroundProgressRingPip5" />
+
+    <!-- Sliders -->
+    <SolidColorBrush Color="#FFA8A8A8" x:Key="GrayBrush3" />
+    <SolidColorBrush Color="#FF6A6A6A" x:Key="GrayBrush10" />
+    <SolidColorBrush Color="#FF2B2B2B" x:Key="BlackBrush" />
+    <SolidColorBrush Color="#FF8B8B8B" x:Key="ControlBackgroundBrush" />
+    <SolidColorBrush Color="#FFC5C5C5" x:Key="DisabledWhiteBrush" />
+    <SolidColorBrush Color="#FF575757" x:Key="AccentColor" />
+    <SolidColorBrush Color="#FF515151" x:Key="ControlBorderBrush" />
+    <SolidColorBrush Color="#FF1B1B1B" x:Key="TextBrush" />
+
+    <!-- ScrollBars -->
+    <SolidColorBrush Color="#FF696969" x:Key="BackgroundScrollBarMouseOut"/>
+    <SolidColorBrush Color="#FF7E7E7E" x:Key="BackgroundScrollBarMouseOver" />
+    <SolidColorBrush Color="#FFFEFEFE" x:Key="BackgroundScrollBarArrowsMouseOver"/>
+    <SolidColorBrush Color="#FFD3D3D3" x:Key="BackgroundScrollBarArrowsMouseOut"/>
+
+    <!-- Micro ScrollBars -->
+    <SolidColorBrush Color="#FFF7F7F7" x:Key="BackgroundScrollBarsMicroHandleMouseOut" />
+    <SolidColorBrush Color="#FFDADADA" x:Key="BackgroundScrollBarsMicroHandleMouseOver" />
+    <SolidColorBrush Color="WhiteSmoke" x:Key="BackgroundScrollBarsMicroHandlePressed" />
+    
+    <SolidColorBrush Color="#FF9B9B9B" x:Key="BackgroundScrollBarsMicroTrackMouseOut" />    
+
+    <SolidColorBrush Color="#FFCFCFCF" x:Key="BackgroundScrollBarMicroArrowsMouseOut" />
+    <SolidColorBrush Color="#FFD6D6D6" x:Key="BackgroundScrollBarMicroArrowsMouseOver" />
+    <SolidColorBrush Color="#FFF3F3F3" x:Key="BackgroundScrollBarMicroArrowsPressed" />
+    
+    <!-- Button States -->
+    <!-- Button MouseOut -->
+    <SolidColorBrush Color="#FF6E6E6E" x:Key="BorderButtonMouseOut" />
+    <SolidColorBrush Color="#FFD8D8D8" x:Key="BackgroundButtonMouseOut" />
+    <SolidColorBrush Color="#FF3A3A3A" x:Key="TextButtonMouseOut" />
+
+    <!-- Button MouseOver -->
+    <SolidColorBrush Color="#FF939393" x:Key="BorderButtonMouseOver" />
+    <SolidColorBrush Color="#FFDEDEDE" x:Key="BackgroundButtonMouseOver" />
+    <SolidColorBrush Color="#FF1D1D1D" x:Key="TextButtonMouseOver" />
+
+    <!-- Button MouseDown -->
+    <SolidColorBrush Color="#FF3A3A3A" x:Key="BorderButtonMouseDown" />
+    <SolidColorBrush Color="#FFB8B8B8" x:Key="BackgroundButtonMouseDown" />
+    <SolidColorBrush Color="#FF7C7C7C" x:Key="TextButtonMouseDown" />
+
+    <!-- Button Focused -->
+    <SolidColorBrush Color="#FF979797" x:Key="BorderButtonFocused" />
+
+    <!-- ToggleButton IsChecked -->
+    <SolidColorBrush Color="#FF838383" x:Key="BorderButtonIsChecked" />
+    <SolidColorBrush Color="#FF616161" x:Key="BackgroundButtonIsChecked" />
+    <SolidColorBrush Color="#FFE4E4E4" x:Key="TextButtonIsChecked" />
+
+    <!-- Youtube Style Slide Button -->
+    <SolidColorBrush Color="#FF787878" x:Key="BackgroundOnOffButtonMouseOut" />
+    <SolidColorBrush Color="#FFB6B6B6" x:Key="BackgroundOnOffButtonIsChecked" />
+    <SolidColorBrush Color="#FFECECEC" x:Key="BackgroundOnOffButtonHandleIsChecked" />
+    <SolidColorBrush Color="#FFD8D8D8" x:Key="BackgroundOnOffButtonHandleMouseOut" />
+    <SolidColorBrush Color="#FFF0F0F0" x:Key="BackgroundOnOffButtonHandleMouseOver" />
+    
+    <!-- Tab Control -->
+    <SolidColorBrush Color="#FFEAEAEA" x:Key="BackgroundTabControlContent" />
+    <SolidColorBrush Color="#FF838383" x:Key="BorderTabControlContent" />
+
+    <SolidColorBrush Color="#FF666666" x:Key="TextTabControlMouseOut" />
+    <SolidColorBrush Color="#FF5D5D5D" x:Key="TextTabControlSelected" />
+
+    <SolidColorBrush Color="#FFD1D1D1" x:Key="BackgroundTabControlTabMouseOut" />
+    <SolidColorBrush Color="#FFEAEAEA" x:Key="BackgroundTabControlTabMouseOver" />
+
+    <SolidColorBrush Color="#FFBFBFBF" x:Key="BackgroundTabControlUnderlineMouseOut" />
+    <SolidColorBrush Color="#FF5B5B5B" x:Key="BackgroundTabControlUnderlineMouseOver" />
+    
+    <!-- C-C-C-ComboBoxes -->
+    <SolidColorBrush Color="#FF464545" x:Key="TextComboBoxMouseOut"/>
+    <SolidColorBrush Color="#FF636363" x:Key="TextComboBoxMouseOver"/>
+        
+    <SolidColorBrush Color="Gainsboro" x:Key="BackgroundComboBoxMouseOut"/>    
+    <SolidColorBrush Color="#FF919191" x:Key="BorderComboBoxMouseOut"/>
+    <SolidColorBrush Color="#FFA0A0A0" x:Key="BorderComboBoxMouseOver"/>
+    <!-- ComboBox Popup  -->
+    <SolidColorBrush Color="#FFDADADA" x:Key="BackgroundComboBoxPopup"/>
+    <SolidColorBrush Color="#FFBFBFBF" x:Key="BorderComboBoxPopup"/>
+    <!-- ComboBox Toggle Button -->
+    <SolidColorBrush Color="#FFD6D6D6" x:Key="BackgroundComboBoxButtonMouseOut"/>
+    <SolidColorBrush Color="#FFE0E0E0" x:Key="BackgroundComboBoxButtonMouseOver"/>
+    <SolidColorBrush Color="#FFCFCFCF" x:Key="BackgroundComboBoxButtonIsChecked"/>
+
+    <SolidColorBrush Color="#FFC9C9C9" x:Key="BorderComboBoxButtonMouseOut"/>
+    <SolidColorBrush Color="#FFBFBFBF" x:Key="BorderComboBoxButtonMouseOver"/>
+    <SolidColorBrush Color="#FFA4A4A4" x:Key="BorderComboBoxButtonIsChecked"/>
+
+    <SolidColorBrush Color="#FF8D979E" x:Key="ArrowComboBoxButtonMouseOut"/>
+    <SolidColorBrush Color="#FF515151" x:Key="ArrowComboBoxButtonMouseOver"/>
+    <SolidColorBrush Color="#FF666666" x:Key="ArrowComboBoxButtonIsChecked"/>
+    <!-- ComboBox Item  -->
+    <SolidColorBrush Color="#FF898989" x:Key="TextComboBoxItemMouseOut"/>
+    <SolidColorBrush Color="#FF464545" x:Key="TextComboBoxItemMouseOver"/>
+    <SolidColorBrush Color="#FF464545" x:Key="TextComboBoxItemSelected"/>
+
+    <SolidColorBrush Color="#FFD3D3D3" x:Key="BorderComboBoxItemMouseOut"/>
+    <SolidColorBrush Color="#FFD4D4D4" x:Key="BorderComboBoxItemMouseOver"/>
+    <SolidColorBrush Color="#FFD1D1D1" x:Key="BorderComboBoxItemSelected"/>
+    
+    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" x:Key="BackgroundComboBoxItemMouseOut">
+        <GradientStop Color="Transparent" Offset="0"/>
+        <GradientStop Color="#FFDADADA" Offset="0.2"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" x:Key="BackgroundComboBoxItemMouseOver">
+        <GradientStop Color="Transparent" Offset="0"/>
+        <GradientStop Color="#FFD8D8D8" Offset="0.2"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush StartPoint="0,0.5" EndPoint="1,0.5" x:Key="BackgroundComboBoxItemSelected">
+        <GradientStop Color="Transparent" Offset="0"/>
+        <GradientStop Color="#FFD4D4D4" Offset="0.2"/>
+    </LinearGradientBrush>
+
+    <!-- Grads -->
+    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="DefaultButtonGrad">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FFF3F3F3" Offset="0" />
+            <GradientStop Color="#FFEBEBEB" Offset="0.5" />
+            <GradientStop Color="#FFDDDDDD" Offset="0.5" />
+            <GradientStop Color="#FFCDCDCD" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" x:Key="BorderUiMainMenu">
+        <GradientStop Color="DarkSlateGray" Offset="0"/>
+        <GradientStop Color="#66A0B8B8" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0"  x:Key="BackgroundUiMainMenu">
+        <GradientStop Color="#FF4F4F4F" Offset="0.19"/>
+        <GradientStop Color="#33A0B8B8" Offset="1"/>
+    </LinearGradientBrush>
+
+    
+</ResourceDictionary>

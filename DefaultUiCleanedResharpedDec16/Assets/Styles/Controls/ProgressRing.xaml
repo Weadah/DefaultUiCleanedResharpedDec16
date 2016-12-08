@@ -1,0 +1,102 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctrl="clr-namespace:DefaultUiCleanedResharpedDec16.Assets.Controls">
+
+    <Style TargetType="{x:Type ctrl:ProgressRing}">
+        <Setter Property="ControlDiameter"       Value="76"/>
+        <Setter Property="ProgressRingThickness" Value="8"/>
+        <Setter Property="StaticRingThickness"   Value="4"/>
+        <Setter Property="StaticRingOffset"      Value="0"/>
+        <Setter Property="ProgressRingOffset"    Value="4"/>
+        <Setter Property="PipsElementOffset"     Value="0"/>
+
+        <Setter Property="IsIndeterminate"       Value="False"/>
+        <Setter Property="TextFadeOnComplete"    Value="True"/>
+        <Setter Property="ShowPipsOnTrigger"     Value="True"/>
+        <Setter Property="ShowStaticRing"        Value="True"/>
+        <Setter Property="ShowProgressRing"      Value="True"/>
+        <Setter Property="ShowPipsElement"       Value="True"/>
+        <Setter Property="ShowTextElement"       Value="True"/>
+
+        <Setter Property="PipsPosition"           Value="Outside"/>
+        <Setter Property="PipAnimationSpeed"      Value="4"/>
+        <Setter Property="PipAnimationBeginDelay" Value="270"/>
+        <Setter Property="Pips"                   Value="5"/>
+        <Setter Property="PipSize"                Value="10"/>
+        <Setter Property="PipSegmentPercent"      Value="10"/>
+        
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Padding" Value="3,0,0,0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ctrl:ProgressRing}">
+
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+                        <!-- Static Ring  -->
+                        <Ellipse x:Name="PART_StaticRing" 
+                            Width="{Binding StaticRingDiameter, RelativeSource={RelativeSource TemplatedParent}}" 
+                            Height="{Binding StaticRingDiameter, RelativeSource={RelativeSource TemplatedParent}}"                                                                                             
+                            StrokeThickness="{Binding StaticRingThickness, RelativeSource={RelativeSource TemplatedParent}}"    
+                            Stroke="{DynamicResource BackgroundProgressRingStaticRing}"                            
+                            StrokeDashArray="1"                             
+                            RenderTransformOrigin="0.5, 0.5"
+                            SnapsToDevicePixels="False"                             
+                            VerticalAlignment="Center" 
+                            HorizontalAlignment="Center">
+                            <Ellipse.RenderTransform>
+                                <RotateTransform/>
+                            </Ellipse.RenderTransform>
+                            <Ellipse.Resources>
+                                <Storyboard x:Key="RotationStoryboard">
+                                    <DoubleAnimation Storyboard.TargetProperty="(Rectangle.RenderTransform).(RotateTransform.Angle)" To="-360" Duration="0:0:30" RepeatBehavior="Forever"/>
+                                </Storyboard>
+                            </Ellipse.Resources>
+                            <Ellipse.Style>
+                                <Style TargetType="Ellipse">
+                                    <Style.Triggers>
+
+                                        <EventTrigger RoutedEvent="Control.Loaded">
+                                            <BeginStoryboard x:Name="RotationStoryboard" Storyboard="{StaticResource RotationStoryboard}"/>
+                                        </EventTrigger>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </Ellipse.Style>
+                        </Ellipse>
+
+                        <!-- Progress Ring -->
+                        <ctrl:DonutMachine x:Name="PART_ProgressRing" 
+                            ControlDiameter="{Binding ProgressRingDiameter, RelativeSource={RelativeSource TemplatedParent}}" 
+                            Percentage="{Binding Percentage, RelativeSource={RelativeSource TemplatedParent}}" 
+                            SegmentThickness="{Binding ProgressRingThickness, RelativeSource={RelativeSource TemplatedParent}}"    
+                            RotationAngle="{Binding ProgressRingRotationAngle, RelativeSource={RelativeSource TemplatedParent}}"
+                            Background="{DynamicResource BackgroundProgressRingProgressRing}"                             
+                            StrokeStartCap="Flat"
+                            StrokeEndCap="Triangle"/>
+
+                        <!-- Pips  -->
+                        <Grid x:Name="PART_PipsElement" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" RenderTransformOrigin="0.5,0.5"/>
+
+                        <!-- Text  -->
+                        <TextBlock x:Name="PART_TextElement" 
+                            Text="{Binding TextBoxContent, RelativeSource={RelativeSource TemplatedParent}}"
+                            Opacity="{Binding TextElementOpacity, RelativeSource={RelativeSource TemplatedParent}}"
+                            Margin="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}}"
+                            Foreground="{DynamicResource TextProgressRing}"
+                            FontFamily="{DynamicResource FontFamilyInterFace}"
+                            FontSize="{DynamicResource FontSize10}"
+                            FontWeight="Bold"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            SnapsToDevicePixels="True"/>
+
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

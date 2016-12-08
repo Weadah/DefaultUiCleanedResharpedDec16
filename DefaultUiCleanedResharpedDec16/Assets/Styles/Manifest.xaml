@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type Rectangle}"/>
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/Borders.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/Buttons.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/CheckBoxes.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/ComboBoxes.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/ContentControls.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/Donuts.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/ListBoxes.xaml" />           
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/ProgressBars.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/ProgressRing.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/ScrollBars.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/ScrollBarsMicro.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/ScrollViewers.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/Sliders.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/StatusTexts.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/Tabs.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/TextBlocks.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/TextBoxes.xaml" />
+        <ResourceDictionary  Source="/DefaultUiCleanedResharpedDec16;component/Assets/Styles/Controls/UserInterface.xaml" />        
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

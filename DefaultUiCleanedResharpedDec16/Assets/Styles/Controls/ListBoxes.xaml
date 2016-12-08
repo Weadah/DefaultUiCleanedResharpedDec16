@@ -1,0 +1,136 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+
+    <Style x:Key="TextListBoxItemSubMenu" TargetType="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="{DynamicResource TextListBoxItemMouseOut}"/>
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyReadable}"/>
+        <Setter Property="FontSize" Value="{DynamicResource FontSize13}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Margin" Value="5,5,3,3"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="UseLayoutRounding" Value="True"/>
+    </Style>
+   
+    <Style TargetType="{x:Type ListBox}">
+        <Setter Property="SnapsToDevicePixels" Value="False"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+        <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="95"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    
+                    <Border Name="Border" 
+                            Background="{DynamicResource BackgroundListBox}"
+                            BorderBrush="{DynamicResource BorderListBox}" 
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                            BorderThickness="1"
+                            CornerRadius="2">
+                        
+                        <ScrollViewer Margin="0" Focusable="False">
+                            <StackPanel Margin="0,2,2,2" IsItemsHost="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                        </ScrollViewer>
+                        
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource BackgroundControlDisabled}" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource BorderControlDisabled}" />
+                        </Trigger>
+                        <Trigger Property="IsGrouping" Value="True">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="False"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="DropDownListBoxItem">
+        <Grid Margin="0,0,0,3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border  Grid.Row="0" Style="{DynamicResource UiBaseBorderOuter}" SnapsToDevicePixels="true" Height="10"  Margin="0,0,0,1">
+                <Border x:Name="TopBorder" Style="{DynamicResource UiBaseBorderInner}" SnapsToDevicePixels="true" />
+            </Border>
+
+            <Border Grid.Row="1" Style="{DynamicResource UiBaseBorderOuter}" Margin="0">
+                <Border Style="{DynamicResource UiBaseBorderInner}">
+
+                    <TextBlock Text="{Binding String_Prop_A}" x:Name="aName"           
+                         Foreground="{DynamicResource TextListBoxItemMouseOut}"                         
+                         FontFamily="{DynamicResource FontFamilyReadable}"
+                         FontSize="{DynamicResource FontSize13}" 
+                         HorizontalAlignment="Stretch" Margin="5,3,3,3"/>
+                </Border>
+            </Border>
+
+            <Grid x:Name="EditRow" Grid.Row="2" Margin="0,3,0,0">
+                <Grid.Style>
+                    <Style TargetType="{x:Type Grid}">
+                        <Setter Property="Visibility" Value="Collapsed" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsChecked, ElementName=EditButton}" Value="True">
+                                <Setter Property="Visibility" Value="Visible" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Grid.Style>
+
+                <Border Style="{DynamicResource UiBaseBorderOuter}" Margin="0">
+                    <Border Style="{DynamicResource UiBaseBorderInner}">
+
+                        <StackPanel  Orientation="Vertical" Margin="0,3,0,0">
+                            <TextBlock Text="{Binding String_Prop_B}" Style="{DynamicResource TextListBoxItemSubMenu}"/>
+                            <TextBlock Text="{Binding Int_Prop_A}"    Style="{DynamicResource TextListBoxItemSubMenu}"/>
+                            <TextBlock Text="{Binding Int_Prop_B}"    Style="{DynamicResource TextListBoxItemSubMenu}"/>
+                            <TextBlock Text="{Binding Int_Prop_C}"    Style="{DynamicResource TextListBoxItemSubMenu}"/>
+                        </StackPanel>
+                    </Border>
+                </Border>
+            </Grid>
+
+            <StackPanel x:Name="ButtonRow" Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,3,0,0" Visibility="Collapsed">
+                <Button Content="Del" Width="33" Height="20" Margin="0,0,3,0"/>
+                <ToggleButton Content="Edit" x:Name="EditButton"  Width="33" Height="20" Margin="0,0,3,0"/>
+                <Button Content="&#x25B2;"  Width="33" Height="20" Margin="0,0,3,0"/>
+                <Button Content="&#x25BC;"  Width="33" Height="20"/>
+            </StackPanel>
+
+        </Grid>
+
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding 
+                RelativeSource={RelativeSource Mode=FindAncestor,
+                AncestorType={x:Type ListBoxItem}},Path=IsSelected}" 
+                Value="True">
+
+                <Setter TargetName="TopBorder" Property="Background" Value="{DynamicResource BackgroundListBoxItemIsSelected}"/>
+                <Setter TargetName="aName" Property="Foreground" Value="{DynamicResource TextListBoxItemIsSelected}"/>
+                <Setter TargetName="ButtonRow" Property="Visibility" Value="Visible"/>
+
+            </DataTrigger>
+
+            <DataTrigger Binding="{Binding 
+                RelativeSource={RelativeSource Mode=FindAncestor,
+                AncestorType={x:Type ListBoxItem}},Path=IsSelected}" 
+                Value="False">
+
+                <Setter TargetName="EditButton" Property="IsChecked" Value="False"/>
+
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+</ResourceDictionary>

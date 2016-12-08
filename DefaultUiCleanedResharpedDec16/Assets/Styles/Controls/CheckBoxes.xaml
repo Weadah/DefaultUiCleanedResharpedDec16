@@ -1,0 +1,170 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ap="clr-namespace:DefaultUiCleanedResharpedDec16.Assets.AttachedProperties">
+
+    <Style TargetType="{x:Type CheckBox}">
+
+        <Setter Property="FontSize" Value="{DynamicResource FontSize10}" />
+        <Setter Property="FontFamily" Value="{DynamicResource FontFamilyInterFace}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BorderCheckBoxMouseOut}" />        
+        <Setter Property="Foreground" Value="{DynamicResource TextInterfaceDark}" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="6,0,0,0" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+
+
+                            <VisualStateGroup x:Name="CheckStates">
+
+                                <VisualState x:Name="Checked">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.1" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_Tick" />
+                                        <DoubleAnimation Duration="0:0:0.1" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_CheckedState" />
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="Unchecked" >
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.1" To="0.2" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_Tick" />
+                                        <DoubleAnimation Duration="0:0:0.1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_CheckedState" />
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="Indeterminate">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_Tick" />
+                                        <DoubleAnimation Duration="0:0:0.1" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_Indeterminate" />
+                                    </Storyboard>
+                                </VisualState>
+
+                            </VisualStateGroup>
+
+
+                            <VisualStateGroup x:Name="CommonStates">
+
+                                <VisualState x:Name="Normal">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.1" To="1" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_Content" />
+                                        <DoubleAnimation Duration="0:0:0.1" To="0" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_Indeterminate" />
+                                    </Storyboard>
+                                </VisualState>
+
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0:0:0.1" To="0.5" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_Content" />
+                                        <DoubleAnimation Duration="0:0:0.1" To="0.25" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_CheckedState" />
+                                        <DoubleAnimation Duration="0:0:0.1" To="0.25" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_NormalState" />
+                                    </Storyboard>
+                                </VisualState>
+
+
+
+                            </VisualStateGroup>
+
+                        </VisualStateManager.VisualStateGroups>
+
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="18" x:Name="LeftCol" />
+                            <ColumnDefinition Width="*"  x:Name="RightCol" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid x:Name="PART_Checked">
+
+                            <Rectangle Fill="{DynamicResource SemiTransparentWhiteBrush}" Margin="-6, 0" Opacity="0"/>
+
+                            <Border x:Name="PART_NormalState"
+                                CornerRadius="1" 
+                                Background="{DynamicResource BackgroundCheckboxMouseOut}"
+                                Width="18"
+                                Height="18" />
+
+                            <Border x:Name="PART_CheckedState"
+                                Opacity="0"
+                                CornerRadius="1" 
+                                Background="{DynamicResource BackgroundCheckboxIsChecked}"
+                                Width="18"
+                                Height="18" />
+
+                            <Path x:Name="PART_Tick"
+                                Height="10"
+                                Width="12"
+                                Stretch="Fill"
+                                Opacity="0" 
+                                Data="M 1145.607177734375,430 C1145.607177734375,430 1141.449951171875,435.0772705078125 1141.449951171875,435.0772705078125 1141.449951171875,435.0772705078125 1139.232177734375,433.0999755859375 1139.232177734375,433.0999755859375 1139.232177734375,433.0999755859375 1138,434.5538330078125 1138,434.5538330078125 1138,434.5538330078125 1141.482177734375,438 1141.482177734375,438 1141.482177734375,438 1141.96875,437.9375 1141.96875,437.9375 1141.96875,437.9375 1147,431.34619140625 1147,431.34619140625 1147,431.34619140625 1145.607177734375,430 1145.607177734375,430 z"
+                                Fill="{DynamicResource AccentBase}"
+                                UseLayoutRounding="False" />
+
+                            <Border x:Name="PART_Indeterminate"
+                                Background="{DynamicResource BackgroundCheckboxIndeterminate}"                                                          
+                                Width="12"
+                                Height="4"                                 
+                                Opacity="0" SnapsToDevicePixels="False" Effect="{DynamicResource ResourceKey=UiHeaderDropShadow}"/>
+
+                            <Border x:Name="PART_CheckBoxBorder"
+                                CornerRadius="1" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Width="18"
+                                Height="18" />
+                        </Grid>
+
+                        <ContentPresenter x:Name="PART_Content"
+                                ContentTemplate="{TemplateBinding ContentTemplate}"
+                                Content="{TemplateBinding Content}"
+                                RecognizesAccessKey="True"
+                                Grid.Column="1"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                Margin="{TemplateBinding Padding}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="PART_CheckBoxBorder" Property="BorderBrush" Value="{DynamicResource BorderCheckBoxMouseOver}" />
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="PART_CheckBoxBorder" Property="BorderBrush" Value="{DynamicResource BorderCheckBoxIsPressed}" />
+                        </Trigger>
+
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter TargetName="PART_CheckBoxBorder" Property="BorderBrush" Value="{DynamicResource BorderCheckBoxIsFocused}" />
+                        </Trigger>
+
+                        <Trigger Property="FlowDirection" Value="RightToLeft">
+                            <Setter TargetName="PART_Tick" Property="LayoutTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="-1" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="ToggleButton.IsEnabled" Value="False">
+                            <Setter Property="Fill" TargetName="PART_Tick" Value="{DynamicResource TextControlDisabled}"/>
+                            <Setter Property="Background" TargetName="PART_CheckedState" Value="{DynamicResource BackgroundControlDisabled}"/>
+                            <Setter Property="Background" TargetName="PART_NormalState" Value="{DynamicResource BackgroundControlDisabled}"/>
+                            <Setter Property="BorderBrush" TargetName="PART_CheckBoxBorder" Value="{DynamicResource BorderControlDisabled}"/>
+                        </Trigger>
+
+                        <Trigger Property="ap:CheckBoxFlowDirection.ContentDirection" Value="RightToLeft">
+                            <Setter Property="Padding" Value="0,0,6,0" />
+                            <Setter TargetName="LeftCol" Property="Width" Value="*" />
+                            <Setter TargetName="RightCol" Property="Width" Value="18" />
+                            <Setter TargetName="PART_Checked" Property="Grid.Column" Value="1" />
+                            <Setter TargetName="PART_Content" Property="Grid.Column" Value="0" />
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>
